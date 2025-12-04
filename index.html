@@ -1,4 +1,4 @@
-<!-- Clean Profile Website Template with Animations -->
+<!-- Clean Profile Website Template with Animations, Circular Buttons, and Integrated Content -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +19,7 @@
       animation: fadeIn 1.2s ease forwards;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
     .card {
       background: white;
@@ -36,16 +33,7 @@
       animation: popUp 0.9s ease forwards 0.2s;
     }
 
-    @keyframes popUp {
-      0% {
-        opacity: 0;
-        transform: translateY(30px) scale(0.98);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
+    @keyframes popUp { 0% { opacity: 0; transform: translateY(30px) scale(0.98); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
 
     .pfp {
       width: 130px;
@@ -57,99 +45,57 @@
       animation: fadeSlide 0.8s ease forwards 0.5s;
     }
 
-    @keyframes fadeSlide {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    @keyframes fadeSlide { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
-    h1, p {
-      opacity: 0;
-      animation: fadeSlide 0.8s ease forwards 0.7s;
-    }
+    h1, p { opacity: 0; animation: fadeSlide 0.8s ease forwards 0.7s; }
+    p { animation-delay: 0.85s; color: #444; margin: 8px 0 20px; }
 
-    p {
-      animation-delay: 0.85s;
-      color: #444;
-      margin: 8px 0 20px;
-    }
-
-    .links a {
-      display: block;
-      margin: 10px 0;
-      padding: 12px;
-      border-radius: 10px;
-      text-decoration: none;
-      background: #e9e9e9;
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      margin: 10px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(145deg, #f0f0f0, #dcdcdc);
       color: black;
+      font-size: 18px;
+      text-align: center;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.1), -5px -5px 15px rgba(255,255,255,0.7);
       transition: 0.3s;
       opacity: 0;
       animation: fadeSlide 0.8s ease forwards;
     }
 
-    .links a:nth-child(1) { animation-delay: 1.0s; }
-    .links a:nth-child(2) { animation-delay: 1.15s; }
-    .links a:nth-child(3) { animation-delay: 1.3s; }
-
-    .links a:hover {
-      background: #d3d3d3;
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-      /* Dark Mode */
-    body.dark {
-      background: #121212;
-      color: white;
+    .btn:hover {
+      transform: scale(1.1);
+      background: linear-gradient(145deg, #dcdcdc, #f0f0f0);
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.2), -2px -2px 8px rgba(255,255,255,0.5);
     }
 
-    body.dark .card {
-      background: #1e1e1e;
-      box-shadow: 0 8px 30px rgba(255,255,255,0.06);
-    }
+    /* Dark Mode */
+    body.dark { background: #121212; color: white; }
+    body.dark .card { background: #1e1e1e; box-shadow: 0 8px 30px rgba(255,255,255,0.06); }
+    body.dark .btn { background: linear-gradient(145deg, #2a2a2a, #1f1f1f); color: white; box-shadow: 5px 5px 15px rgba(0,0,0,0.3), -5px -5px 15px rgba(255,255,255,0.05); }
+    body.dark .btn:hover { background: linear-gradient(145deg, #1f1f1f, #2a2a2a); box-shadow: 2px 2px 8px rgba(0,0,0,0.4), -2px -2px 8px rgba(255,255,255,0.1); }
 
-    body.dark .links a {
-      background: #2c2c2c;
-      color: white;
-    }
-
-    body.dark .links a:hover {
-      background: #3a3a3a;
-      box-shadow: 0 5px 15px rgba(255,255,255,0.08);
-    }
-
-    .toggle-btn {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 10px 16px;
-      border-radius: 12px;
-      background: #eaeaea;
-      cursor: pointer;
-      font-size: 14px;
-      transition: 0.3s;
-    }
-
-    body.dark .toggle-btn {
-      background: #2c2c2c;
-      color: white;
-    }
+    .toggle-btn { position: fixed; top: 20px; right: 20px; padding: 10px 16px; border-radius: 12px; background: #eaeaea; cursor: pointer; font-size: 14px; transition: 0.3s; }
+    body.dark .toggle-btn { background: #2c2c2c; color: white; }
   </style>
 </head>
 <body>
   <div class="toggle-btn" onclick="toggleMode()">🌞</div>
   <div class="card">
     <img src="https://via.placeholder.com/130" class="pfp" />
-    <h1>Your Name</h1>
+    <h1>ZiteyBitey</h1>
     <p>Tech-minded creator obsessed with clean visuals and efficient builds.</p>
-    <p>I mix aesthetics with function to make experiences feel effortless.  </p>
+    <p>I mix aesthetics with function to make experiences feel effortless.</p>
     <p>Sun or moon, I’m always crafting something new.</p>
     <div class="links">
-      <button class="btn" onclick="location.href='https://x.com/ziteybiteyarch'">Twitter</button>
+      <button class="btn" onclick="location.href='https://x.com/ziteybiteyarch'">T</button>
     </div>
   </div>
 <script>
